@@ -1,0 +1,16 @@
+{
+  "name": "VocabMaster 科学自适应背单词",
+  "short_name": "VocabMaster",
+  "description": "基于 FSRS 5.0 记忆模型与新拟态声学触感控制台的科学背单词系统",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EAECEF",
+  "theme_color": "#EAECEF",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
