@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neu-bg: #E6EAEF;
+  --neu-bg-alt: #EDF1F5;
+  --neu-text-main: #333B48;
+  --neu-text-sub: #667282;
+  --neu-text-muted: #93A0B0;
+  --neu-shadow-dark: #C4CCD4;
+  --neu-shadow-light: #FFFFFF;
+  --neu-highlight-edge: rgba(255, 255, 255, 0.55);
+
+  /* Soft Muted Hardware Indicator Colors */
+  --neu-sage: #4A8C6F;
+  --neu-sage-soft: rgba(74, 140, 111, 0.14);
+  --neu-amber: #C87D4B;
+  --neu-amber-soft: rgba(200, 125, 75, 0.14);
+  --neu-coral: #C45B5B;
+  --neu-coral-soft: rgba(196, 91, 91, 0.14);
+  --neu-steel: #5279A8;
+  --neu-steel-soft: rgba(82, 121, 168, 0.14);
+}
+
+.dark {
+  --neu-bg: #252930;
+  --neu-bg-alt: #2B3038;
+  --neu-text-main: #DCE2EA;
+  --neu-text-sub: #94A0B0;
+  --neu-text-muted: #646F80;
+  --neu-shadow-dark: #181B20;
+  --neu-shadow-light: #323741;
+  --neu-highlight-edge: rgba(255, 255, 255, 0.04);
+
+  /* Soft Dark Hardware Indicator Colors */
+  --neu-sage: #63AD8D;
+  --neu-sage-soft: rgba(99, 173, 141, 0.16);
+  --neu-amber: #D99162;
+  --neu-amber-soft: rgba(217, 145, 98, 0.16);
+  --neu-coral: #D67272;
+  --neu-coral-soft: rgba(214, 114, 114, 0.16);
+  --neu-steel: #6E96C6;
+  --neu-steel-soft: rgba(110, 150, 198, 0.16);
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+    background-color: var(--neu-bg);
+    color: var(--neu-text-main);
+    transition: background-color 0.25s ease, color 0.25s ease;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Molded Hardware Surfaces */
+  .neu-surface {
+    background-color: var(--neu-bg);
+    color: var(--neu-text-main);
+  }
+
+  .neu-panel {
+    background-color: var(--neu-bg);
+    box-shadow: 9px 9px 18px var(--neu-shadow-dark), -9px -9px 18px var(--neu-shadow-light);
+    border: none;
+  }
+
+  .neu-card {
+    background-color: var(--neu-bg);
+    box-shadow: 6px 6px 13px var(--neu-shadow-dark), -6px -6px 13px var(--neu-shadow-light);
+    border: none;
+  }
+
+  .neu-raised {
+    background-color: var(--neu-bg);
+    box-shadow: 4px 4px 9px var(--neu-shadow-dark), -4px -4px 9px var(--neu-shadow-light);
+    border: none;
+  }
+
+  .neu-sm {
+    background-color: var(--neu-bg);
+    box-shadow: 2.5px 2.5px 5.5px var(--neu-shadow-dark), -2.5px -2.5px 5.5px var(--neu-shadow-light);
+    border: none;
+  }
+
+  /* Carved / Recessed Channels & Screens */
+  .neu-inset {
+    background-color: var(--neu-bg);
+    box-shadow: inset 4px 4px 8px var(--neu-shadow-dark), inset -4px -4px 8px var(--neu-shadow-light);
+    border: none;
+  }
+
+  .neu-inset-sm {
+    background-color: var(--neu-bg);
+    box-shadow: inset 2.5px 2.5px 5px var(--neu-shadow-dark), inset -2.5px -2.5px 5px var(--neu-shadow-light);
+    border: none;
+  }
+
+  .neu-inset-deep {
+    background-color: var(--neu-bg);
+    box-shadow: inset 6px 6px 12px var(--neu-shadow-dark), inset -6px -6px 12px var(--neu-shadow-light);
+    border: none;
+  }
+
+  /* Tactile Physical Keycaps & Buttons */
+  .neu-btn {
+    background-color: var(--neu-bg);
+    color: var(--neu-text-main);
+    box-shadow: 4px 4px 9px var(--neu-shadow-dark), -4px -4px 9px var(--neu-shadow-light);
+    transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: none;
+    user-select: none;
+  }
+
+  .neu-btn:hover:not(:disabled) {
+    box-shadow: 5px 5px 11px var(--neu-shadow-dark), -5px -5px 11px var(--neu-shadow-light);
+    transform: translateY(-0.5px);
+  }
+
+  .neu-btn:active:not(:disabled),
+  .neu-btn-active {
+    background-color: var(--neu-bg);
+    box-shadow: inset 3px 3px 6px var(--neu-shadow-dark), inset -3px -3px 6px var(--neu-shadow-light) !important;
+    transform: translateY(1px);
+  }
+
+  .neu-btn-sm {
+    background-color: var(--neu-bg);
+    color: var(--neu-text-main);
+    box-shadow: 2.5px 2.5px 5.5px var(--neu-shadow-dark), -2.5px -2.5px 5.5px var(--neu-shadow-light);
+    transition: all 0.14s ease;
+    border: none;
+    user-select: none;
+  }
+
+  .neu-btn-sm:hover:not(:disabled) {
+    box-shadow: 3.5px 3.5px 7px var(--neu-shadow-dark), -3.5px -3.5px 7px var(--neu-shadow-light);
+  }
+
+  .neu-btn-sm:active:not(:disabled),
+  .neu-btn-sm-active {
+    background-color: var(--neu-bg);
+    box-shadow: inset 2.5px 2.5px 5px var(--neu-shadow-dark), inset -2.5px -2.5px 5px var(--neu-shadow-light) !important;
+    transform: translateY(0.5px);
+  }
+
+  /* Recessed Input Well */
+  .neu-input {
+    background-color: var(--neu-bg);
+    color: var(--neu-text-main);
+    box-shadow: inset 3.5px 3.5px 7px var(--neu-shadow-dark), inset -3.5px -3.5px 7px var(--neu-shadow-light);
+    border: none;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .neu-input::placeholder {
+    color: var(--neu-text-muted);
+  }
+
+  .neu-input:focus {
+    box-shadow: inset 4.5px 4.5px 9px var(--neu-shadow-dark), inset -4.5px -4.5px 9px var(--neu-shadow-light);
+  }
+
+  /* Subtle Matte Hardware Indicator Dots (No Cyberpunk Glow) */
+  .neu-led {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .neu-led-off {
+    background-color: var(--neu-text-muted);
+    opacity: 0.35;
+    box-shadow: inset 1px 1px 2px var(--neu-shadow-dark);
+  }
+
+  .neu-led-sage {
+    background-color: var(--neu-sage);
+  }
+
+  .neu-led-amber {
+    background-color: var(--neu-amber);
+  }
+
+  .neu-led-coral {
+    background-color: var(--neu-coral);
+  }
+
+  .neu-led-steel {
+    background-color: var(--neu-steel);
+  }
+
+  /* Silkscreen / Etched Instrument Label */
+  .neu-label {
+    color: var(--neu-text-muted);
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  /* Subtle Engraved Divider Groove */
+  .neu-groove-h {
+    height: 2px;
+    background: var(--neu-shadow-dark);
+    border-bottom: 1px solid var(--neu-shadow-light);
+    opacity: 0.55;
+  }
+
+  /* Neumorphic Hardware Fader / Range Slider */
+  .neu-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 9999px;
+    background: var(--neu-bg);
+    box-shadow:
+      inset 2px 2px 5px var(--neu-shadow-dark),
+      inset -2px -2px 5px var(--neu-shadow-light);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .neu-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: var(--neu-bg);
+    border: 2px solid var(--neu-sage);
+    box-shadow:
+      3px 3px 6px var(--neu-shadow-dark),
+      -2px -2px 5px var(--neu-shadow-light);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .neu-range::-webkit-slider-thumb:hover {
+    transform: scale(1.08);
+  }
+
+  .neu-range::-webkit-slider-thumb:active {
+    transform: scale(0.96);
+    box-shadow:
+      inset 2px 2px 4px var(--neu-shadow-dark),
+      inset -2px -2px 4px var(--neu-shadow-light);
+  }
+
+  .neu-range::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: var(--neu-bg);
+    border: 2px solid var(--neu-sage);
+    box-shadow:
+      3px 3px 6px var(--neu-shadow-dark),
+      -2px -2px 5px var(--neu-shadow-light);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+}
+
+/* Hide scrollbar while preserving touch/wheel scrolling */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Custom recessed scrollbar (safe around rounded-2xl / rounded-3xl corners) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 10px;
+  margin-inline: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 148, 166, 0.36);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.58);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
